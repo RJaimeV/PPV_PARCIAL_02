@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7d1724d640d6b14997424a562a17c29, type: 3}
+  m_Name: "Secci\xF3n1_Lecci\xF3n1"
+  m_EditorClassIdentifier: 
+  Lesson: 0
+  leccionList:
+  - ID: 0
+    lessons: "Es un contenedor de informaci\xF3n:"
+    options:
+    - Clase
+    - "M\xE9todo"
+    - Variable
+    - GameObject
+    - Prefab
+    correctAnswer: 2
+  - ID: 1
+    lessons: "Es una porci\xF3n de c\xF3digo que realiza una acci\xF3n:"
+    options:
+    - Clase
+    - "Funci\xF3n"
+    - GameObject
+    - Prefab
+    - Algoritmo
+    correctAnswer: 1
+  - ID: 2
+    lessons: 'Serie de pasos para resolver un problema:'
+    options:
+    - Clase
+    - "Funci\xF3n"
+    - GameObject
+    - Prefab
+    - Algoritmo
+    correctAnswer: 4
+  - ID: 3
+    lessons: 'Serie de algoritmos:'
+    options:
+    - Programa
+    - "Funci\xF3n"
+    - GameObject
+    - "Aplicaci\xF3n"
+    - Algoritmo
+    correctAnswer: 0
+  - ID: 4
+    lessons: "\xBFQu\xE9 es un GameObject?"
+    options:
+    - Clase
+    - "Funci\xF3n"
+    - Object
+    - "Aplicaci\xF3n"
+    - Algoritmo
+    correctAnswer: 2
