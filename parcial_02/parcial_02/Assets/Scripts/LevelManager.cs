@@ -59,7 +59,7 @@ public class LevelManager : MonoBehaviour
             correctAnswer = currentLesson.options[currentLesson.correctAnswer];
             //Establecemos la pregunta en UI
             QuestionTxt.text = question;
-           for (int i = 0; i < currentLesson.options.Count; i++)
+            for (int i = 0; i < currentLesson.options.Count; i++)
             {
                 Options[i].GetComponent<Option>().OptionName = currentLesson.options[i];
                 Options[i].GetComponent<Option>().OptionID = i;
