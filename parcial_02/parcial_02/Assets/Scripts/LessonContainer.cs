@@ -6,7 +6,7 @@ using TMPro;
 
 public class LessonContainer : MonoBehaviour
 {
-    [Header("GamePbject Configuration")]
+    [Header("GameObject Configuration")]
     public int Lesson = 0;
     public int CurrentLesson = 0;
     public int TotalLessons = 0;
@@ -48,7 +48,7 @@ public class LessonContainer : MonoBehaviour
         }
     }
 
-    //Este metodo activa/desactiva la ventana de lessonConatines
+    //Este metodo activa/desactiva la ventana de lessonContainer
     public void EnableWindow()
     {
         OnUpdateUI ();

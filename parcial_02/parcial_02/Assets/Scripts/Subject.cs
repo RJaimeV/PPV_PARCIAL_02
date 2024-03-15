@@ -10,5 +10,6 @@ public class Subject : ScriptableObject
     public int Lesson = 0;
 
     [Header("Lesson Quest Configuration")]
+    //Configura el seguimiento de las lecciones
     public List<Leccion> leccionList;
 }
