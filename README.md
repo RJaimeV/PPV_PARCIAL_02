@@ -27,7 +27,7 @@ Para interactuar en este apartado se debe realizar dos pasos:
 Seleccionar el botón con la respuesta que crea correcta.
 
 2.-
-Seleccionar el botón amarillo que tiene la leyenda "Comprobar"
+Seleccionar el botón amarillo que tiene la leyenda "Comprobar".
 
 Esto hará saltar un color confirmando si fue correcta su repuesta (verde) o equivoca (rojo).
 Segundos despúes la pantalla se actualizará con una nueva pregunta y nuevas opciones a elegir.
