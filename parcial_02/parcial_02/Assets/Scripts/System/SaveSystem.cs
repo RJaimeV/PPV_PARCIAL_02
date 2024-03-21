@@ -29,8 +29,9 @@ public class SaveSystem : MonoBehaviour
         {
             //3.- Creamos el contenido
             string content = "LOGIN DATE: " + System.DateTime.Now + "\n";
+            string position = "x: " + gameObject.transform.position.x + ", y: " + gameObject.transform.position.y;
             //4.- Almacenamos la información
-            File.AppendAllText(path, content);
+            File.AppendAllText(path, position);
         }
         else
         {
@@ -45,6 +46,22 @@ public class SaveSystem : MonoBehaviour
         //SaveToJSON("SubjectDummy", subject);
 
         CreateFile("Panfilo", ".data");
+
         //Subject = LoadFromJSON<SubjectContainer>
+
+        Debug.Log(ReadFile("Panfilo", ".data"));
+    }
+
+    public string ReadFile(string _fileName, string _extension)
+    {
+        //1.- Acceder al path del archivo
+        string path = Application.dataPath + "/Resources/" + _fileName + _extension;
+        //2.- Si el archivo existe, dame su info
+        string data = "";
+        if (File.Exists(path))
+        {
+            data = File.ReadAllText(path);
+        }
+        return data;
     }
 }
