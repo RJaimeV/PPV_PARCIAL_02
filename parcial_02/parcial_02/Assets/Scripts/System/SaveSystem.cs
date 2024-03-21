@@ -64,4 +64,29 @@ public class SaveSystem : MonoBehaviour
         }
         return data;
     }
+
+    public void SaveToJSON(string _fileName, object _data)
+    {
+        if (_data != null)
+        {
+            string JSONData = JsonUtility.ToJson(_data, true);
+            if(JSONData.Length !=0)
+            {
+                Debug.Log("JSON STRING: " + JSONData);
+                string fileName = _fileName + ".json";
+                string filePath = Path.Combine(Application.dataPath + "/Resources/JSONS7", fileName);
+                File.WriteAllText(filePath, JSONData);
+                Debug.Log("JSON almacenando en la dirección: " + filePath);
+            }
+            else
+            {
+                Debug.LogWarning("ERROR - fileSystem: JSONData is empty, check for local variable [string JSONData]");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("ERROR - FileSystem: _data is null, check for param [object _data]");
+        }
+        
+    }
 }
