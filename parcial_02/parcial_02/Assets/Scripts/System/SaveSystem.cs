@@ -7,6 +7,9 @@ public class SaveSystem : MonoBehaviour
 {
     public static SaveSystem instance;
 
+    public Leccion data;
+    public SubjectContainer subject;
+
     private void Awake()
     {
         if (instance != null)
@@ -42,14 +45,15 @@ public class SaveSystem : MonoBehaviour
 
     private void Start()
     {
-        //SaveToJSON("LecciónDummy", data);
+        SaveToJSON("LecciónDummy", data);
         //SaveToJSON("SubjectDummy", subject);
 
         CreateFile("Panfilo", ".data");
 
-        //Subject = LoadFromJSON<SubjectContainer>
+        subject = LoadFromJSON<SubjectContainer>("preguntas");
 
-        Debug.Log(ReadFile("Panfilo", ".data"));
+        //Debug.Log(ReadFile("Panfilo", ".data"));
+
     }
 
     public string ReadFile(string _fileName, string _extension)
@@ -74,7 +78,7 @@ public class SaveSystem : MonoBehaviour
             {
                 Debug.Log("JSON STRING: " + JSONData);
                 string fileName = _fileName + ".json";
-                string filePath = Path.Combine(Application.dataPath + "/Resources/JSONS7", fileName);
+                string filePath = Path.Combine(Application.dataPath + "/Resources/JSON/", fileName);
                 File.WriteAllText(filePath, JSONData);
                 Debug.Log("JSON almacenando en la dirección: " + filePath);
             }
@@ -88,5 +92,28 @@ public class SaveSystem : MonoBehaviour
             Debug.LogWarning("ERROR - FileSystem: _data is null, check for param [object _data]");
         }
         
+    }
+
+    public T LoadFromJSON<T>(string _fileName) where T : new()
+    {
+        T Data = new T();       
+        string path = Application.dataPath + "/Resources/JSON/" + _fileName + ".json";       
+        string JSONData = "";
+        if (File.Exists(path))
+        {
+            JSONData = File.ReadAllText(path);
+            Debug.Log("JSON STRING: " + JSONData);
+        }
+
+        if (JSONData.Length != 0)
+        {
+            JsonUtility.FromJsonOverwrite(JSONData, Data);
+        }
+
+        else
+        {
+            Debug.LogWarning("ERROR - FileSystem: JSONData is empty, check for local variable [dtring JSONData]");
+        }
+        return Data;
     }
 }
